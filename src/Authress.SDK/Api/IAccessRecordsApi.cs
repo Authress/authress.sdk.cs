@@ -130,7 +130,7 @@ namespace Authress.SDK.Api
         /// </remarks>
         /// <param name="inviteId">The identifier of the invite.</param>
         /// <returns>Account</returns>
-        Task<Account> RespondToInvite (string inviteId);
+        Task RespondToInvite (string inviteId);
 
         /// <summary>
         /// Delete invite

@@ -272,7 +272,7 @@ namespace Authress.SDK
         /// </summary>
         /// <param name="inviteId">The identifier of the invite.</param>
         /// <returns>Account</returns>
-        public async Task<Account> RespondToInvite(string inviteId)
+        public async Task RespondToInvite(string inviteId)
         {
             if (inviteId == null) throw new ArgumentNullException("Missing required parameter 'inviteId'.");
 
@@ -281,7 +281,6 @@ namespace Authress.SDK
             using (var response = await client.PatchAsync(path, new Invite().ToHttpContent()))
             {
                 await response.ThrowIfNotSuccessStatusCode();
-                return await response.Content.ReadAsAsync<Account>();
             }
         }
 
